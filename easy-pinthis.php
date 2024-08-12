@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Easy PinThis by RafaelBooster⚡
+ * Plugin Name: Easy PinThis
  * Description: Allows you to create and manage Pins and Pin Folders with custom taxonomies, meta boxes, REST API endpoints, and user-friendly shortcodes.
  * Version: 1.0.0
  * Author: RafaelBooster⚡

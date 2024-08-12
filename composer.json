@@ -1,6 +1,6 @@
 {
     "name": "rafaelbooster/easy-pinthis",
-    "description": "Easy PinThis for WordPress by RafaelBooster⚡",
+    "description": "Easy PinThis",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
     "autoload": {
@@ -11,7 +11,7 @@
     "authors": [
         {
             "name": "RafaelBooster⚡",
-            "email": "youremail@example.com"
+            "email": "contato@rafael.work"
         }
     ],
     "require": {}

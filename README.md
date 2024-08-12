@@ -1,9 +1,9 @@
-# Easy PinThis for WordPress by RafaelBooster⚡
+# Easy PinThis
 
 ## English
 
 ### Description
-**Easy PinThis for WordPress by RafaelBooster⚡** is a plugin that allows you to create and manage Pins and Pin Folders in WordPress. This plugin provides custom post types for Pins and Pin Folders, taxonomies for categorization, custom meta boxes for additional settings, REST API endpoints for managing Pin Folders, and shortcodes to display Pins and Pin Folders on the front end.
+**Easy PinThis** is a plugin that allows you to create and manage Pins and Pin Folders in WordPress. This plugin provides custom post types for Pins and Pin Folders, taxonomies for categorization, custom meta boxes for additional settings, REST API endpoints for managing Pin Folders, and shortcodes to display Pins and Pin Folders on the front end.
 
 ### Features
 - Custom Post Type for Pins (`ez_pin`).
@@ -35,7 +35,7 @@ This plugin is licensed under the GPL-2.0-or-later license. See the `LICENSE` fi
 ## Português
 
 ### Descrição
-**Easy PinThis for WordPress by RafaelBooster⚡** é um plugin que permite criar e gerenciar Pins e Pastas de Pins no WordPress. Este plugin fornece tipos de post personalizados para Pins e Pastas de Pins, taxonomias para categorização, metaboxes personalizados para configurações adicionais, endpoints da REST API para gerenciar Pastas de Pins e shortcodes para exibir Pins e Pastas de Pins no frontend.
+**Easy PinThis** é um plugin que permite criar e gerenciar Pins e Pastas de Pins no WordPress. Este plugin fornece tipos de post personalizados para Pins e Pastas de Pins, taxonomias para categorização, metaboxes personalizados para configurações adicionais, endpoints da REST API para gerenciar Pastas de Pins e shortcodes para exibir Pins e Pastas de Pins no frontend.
 
 ### Funcionalidades
 - Tipo de post personalizado para Pins (`ez_pin`).
