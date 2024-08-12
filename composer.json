@@ -1,0 +1,18 @@
+{
+    "name": "rafaelbooster/easy-pinthis",
+    "description": "Easy PinThis for WordPress by RafaelBooster⚡",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "EasyPinThis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "RafaelBooster⚡",
+            "email": "youremail@example.com"
+        }
+    ],
+    "require": {}
+}
