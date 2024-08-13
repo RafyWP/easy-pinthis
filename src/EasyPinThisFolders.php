@@ -59,7 +59,7 @@ class EasyPinThisFolders {
         add_action('add_meta_boxes', function() {
             add_meta_box(
                 'ez_pt_folder_settings',
-                __('Settings', 'easy-pinthis'),
+                __('Pins', 'easy-pinthis'),
                 [$this, 'render_folder_metabox'],
                 'ez_pin_folder',
                 'normal'
@@ -74,15 +74,49 @@ class EasyPinThisFolders {
         $selected_pins = get_post_meta($post->ID, 'pin_ids', true) ?: [];
         $selected_pins = is_array($selected_pins) ? $selected_pins : [];
 
+        echo '<style>
+        #ez_pt_folder_settings .inside {
+            padding-top: 8px;
+        }
+        #ez_pt_folder_settings .inside .list {
+            display: flex;
+            gap: 8px;
+            padding: 8px 0;
+        }
+        #ez_pt_folder_settings .inside .list div {
+            position: relative;
+            width: 96px;
+            height: 96px;
+            border: 2px solid white;
+            border-radius: 6px;
+        }
+        #ez_pt_folder_settings .inside .list div [type=checkbox] {
+            margin: 5px;
+        }
+        #ez_pt_folder_settings .inside .list div:has([type=checkbox]:checked) {
+            border: 2px solid #2271b1;
+            background-color: #2271b1;
+        }
+        #ez_pt_folder_settings .inside .list img {
+            position: absolute;
+            left: 0;
+            border-radius: 4px;
+        }
+        </style>';
+
+        echo '<input type="search" />';
+        echo '<div class="list">';
+
         foreach ($pins as $pin) {
             $checked = in_array($pin->ID, $selected_pins) ? 'checked' : '';
-            $thumb = get_the_post_thumbnail($pin->ID, [150, 150]);
+            $thumb = get_the_post_thumbnail($pin->ID, [96, 96]);
 
-            echo '<p><label>';
+            echo '<div><label>';
             echo '<input type="checkbox" name="pin_ids[]" value="' . $pin->ID . '" ' . $checked . ' />';
             echo $thumb;
-            echo '</label></p>';
+            echo '</label></div>';
         }
+        echo '</div>';
     }
 
     public function save_folder_metabox($post_id) {

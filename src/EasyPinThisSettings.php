@@ -8,6 +8,7 @@ class EasyPinThisSettings {
         add_action('admin_menu', [$this, 'add_settings_page']);
         add_action('admin_init', [$this, 'register_settings']);
         add_action('admin_enqueue_scripts', [$this, 'enqueue_media_scripts']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_front_scripts']);
     }
 
     public function add_settings_page() {
@@ -37,7 +38,9 @@ class EasyPinThisSettings {
             'slug_department' => __('Slug Department', 'easy-pinthis'),
             'slug_season' => __('Slug Season', 'easy-pinthis'),
             'slug_designer' => __('Slug Designer', 'easy-pinthis'),
-            'default_image' => __('Default Image to Pin Folders', 'easy-pinthis')
+            'default_image' => __('Default Image to Pin Folders', 'easy-pinthis'),
+            //'new_folder_input_class' => __('New Folder Input Class', 'easy-pinthis'),
+            //'new_folder_create_btn_class' => __('New Folder Create Button Class', 'easy-pinthis'),
         ];
 
         foreach ($fields as $name => $label) {
@@ -56,12 +59,20 @@ class EasyPinThisSettings {
         wp_enqueue_media();
         wp_enqueue_script('easy-pin-this-script', plugin_dir_url(__FILE__) . 'js/easy-pin-this.js', ['jquery'], null, true);
 
-        // Passa strings para o script JavaScript
         wp_localize_script('easy-pin-this-script', 'easyPinThis', [
             'uploadImage' => __('Upload Image', 'easy-pinthis'),
             'selectImage' => __('Select Image', 'easy-pinthis'),
             'useImage' => __('Use this image', 'easy-pinthis')
         ]);
+    }
+
+    public function enqueue_front_scripts() {
+        wp_enqueue_script('ezpt-front', plugin_dir_url(__FILE__) . 'js/ezpt-front.js', ['jquery'], null, true);
+
+        wp_localize_script('ezpt-front', 'ezptFront', array(
+            'ajax_url' => esc_url(rest_url('easy-pinthis/v1/update-folder/')),
+            'nonce'    => wp_create_nonce('wp_rest')
+        ));
     }
 
     public function render_field($args) {

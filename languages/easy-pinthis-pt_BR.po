@@ -1,0 +1,322 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy PinThis by NeFi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-12 14:50+0000\n"
+"PO-Revision-Date: 2024-08-12 14:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: Português do Brasil\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.11; wp-6.6.1\n"
+"X-Domain: easy-pinthis"
+
+#: src/EasyPinThis.php:26 src/EasyPinThisFolders.php:23
+msgid "Add New"
+msgstr ""
+
+#: src/EasyPinThis.php:25
+msgid "Add New Pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:22
+msgid "Add New Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:21
+msgid "All Pin Folders"
+msgstr ""
+
+#: src/EasyPinThis.php:24
+msgid "All Pins"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Allows you to create and manage Pins and Pin Folders with custom taxonomies, "
+"meta boxes, REST API endpoints, and user-friendly shortcodes."
+msgstr ""
+
+#: src/EasyPinThisTaxonomies.php:13
+msgid "Categories"
+msgstr ""
+
+#: src/EasyPinThis.php:36
+msgid "Choose the image"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:40
+msgid "Default Image to Pin Folders"
+msgstr ""
+
+#: src/EasyPinThisTaxonomies.php:14
+msgid "Departments"
+msgstr ""
+
+#: src/EasyPinThisTaxonomies.php:16
+msgid "Designers"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:15 src/EasyPinThisSettings.php:16
+msgid "Easy Pin This"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:28 src/EasyPinThisSettings.php:84
+msgid "Easy Pin This Settings"
+msgstr ""
+
+#. Name of the plugin
+msgid "Easy PinThis by NeFi"
+msgstr ""
+
+#: src/EasyPinThis.php:28
+msgid "Edit Pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:25
+msgid "Edit Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:32
+msgid "Featured Image"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:40
+msgid "Filter Pin Folders list"
+msgstr ""
+
+#: src/EasyPinThis.php:43
+msgid "Filter pins list"
+msgstr ""
+
+#: src/EasyPinThis.php:35 src/EasyPinThis.php:100
+msgid "Image for this Pin"
+msgstr ""
+
+#: src/EasyPinThis.php:39
+msgid "Insert into pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:36
+msgid "Insert into Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisApi.php:54
+msgid "Missing folder or pin ID"
+msgstr ""
+
+#. Author of the plugin
+msgid "NeFi"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:42
+msgid "New Folder Create Button Class"
+msgstr "Classe do botão \"Criar\" no pop-up de \"Criar Pasta\""
+
+#: src/EasyPinThisSettings.php:41
+msgid "New Folder Input Class"
+msgstr "Classe do input de texto no pop-up de \"Criar Pasta\""
+
+#: src/EasyPinThis.php:27
+msgid "New Pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:24
+msgid "New Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisShortcodes.php:22
+msgid "No pins found."
+msgstr ""
+
+#: src/EasyPinThisShortcodes.php:76
+msgid "No pins in this folder."
+msgstr ""
+
+#: src/EasyPinThisApi.php:33
+msgid "No title provided"
+msgstr ""
+
+#: src/EasyPinThis.php:33 src/EasyPinThisFolders.php:30
+msgid "Not found"
+msgstr ""
+
+#: src/EasyPinThis.php:34 src/EasyPinThisFolders.php:31
+msgid "Not found in Trash"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:20
+msgid "Parent Pin Folder:"
+msgstr ""
+
+#: src/EasyPinThis.php:23
+msgid "Parent Pin:"
+msgstr ""
+
+#: src/EasyPinThis.php:20
+msgid "Pin"
+msgstr ""
+
+#: src/EasyPinThis.php:21
+msgid "Pin Archives"
+msgstr ""
+
+#: src/EasyPinThis.php:22
+msgid "Pin Attributes"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:17
+msgid "Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:18
+msgid "Pin Folder Archives"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:19
+msgid "Pin Folder Attributes"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:16
+msgid "Pin Folders"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:38
+msgid "Pin Folders list"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:39
+msgid "Pin Folders list navigation"
+msgstr ""
+
+#: src/EasyPinThis.php:19
+msgid "Pins"
+msgstr ""
+
+#: src/EasyPinThis.php:41
+msgid "Pins list"
+msgstr ""
+
+#: src/EasyPinThis.php:42
+msgid "Pins list navigation"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:14
+msgctxt "Post Type General Name"
+msgid "Pin Folders"
+msgstr ""
+
+#: src/EasyPinThis.php:17
+msgctxt "Post Type General Name"
+msgid "Pins"
+msgstr ""
+
+#: src/EasyPinThis.php:18
+msgctxt "Post Type Singular Name"
+msgid "Pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:15
+msgctxt "Post Type Singular Name"
+msgid "Pin Folder"
+msgstr ""
+
+#: src/EasyPinThis.php:37 src/EasyPinThisFolders.php:34
+msgid "Remove featured image"
+msgstr ""
+
+#: src/EasyPinThis.php:32
+msgid "Search Pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:29
+msgid "Search Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisTaxonomies.php:15
+msgid "Seasons"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:64
+msgid "Select Image"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:33
+msgid "Set featured image"
+msgstr ""
+
+#: src/EasyPinThis.php:65 src/EasyPinThisFolders.php:62
+msgid "Settings"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:36
+msgid "Slug Category"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:37
+msgid "Slug Department"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:39
+msgid "Slug Designer"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:34
+msgid "Slug Pin"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:35
+msgid "Slug Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:38
+msgid "Slug Season"
+msgstr ""
+
+#: src/EasyPinThis.php:29
+msgid "Update Pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:26
+msgid "Update Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:63 src/EasyPinThisSettings.php:75
+msgid "Upload Image"
+msgstr ""
+
+#: src/EasyPinThis.php:40
+msgid "Uploaded to this pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:37
+msgid "Uploaded to this Pin Folder"
+msgstr ""
+
+#: src/EasyPinThis.php:38 src/EasyPinThisFolders.php:35
+msgid "Use as featured image"
+msgstr ""
+
+#: src/EasyPinThisSettings.php:65
+msgid "Use this image"
+msgstr ""
+
+#: src/EasyPinThis.php:30
+msgid "View Pin"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:27
+msgid "View Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisFolders.php:28
+msgid "View Pin Folders"
+msgstr ""
+
+#: src/EasyPinThis.php:31
+msgid "View Pins"
+msgstr ""

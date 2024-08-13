@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Easy PinThis
+ * Plugin Name: Easy PinThis by NeFi
  * Description: Allows you to create and manage Pins and Pin Folders with custom taxonomies, meta boxes, REST API endpoints, and user-friendly shortcodes.
  * Version: 1.0.0
- * Author: RafaelBooster⚡
+ * Author: NeFi
  * Text Domain: easy-pinthis
  * Domain Path: /languages
  */
@@ -21,3 +21,9 @@ function ez_pt_run() {
 }
 
 add_action('init', 'ez_pt_run');
+
+function ez_pt_load_textdomain() {
+    load_plugin_textdomain('easy-pinthis', false, dirname(plugin_basename(__FILE__)) . '/languages');
+}
+
+add_action('plugins_loaded', 'ez_pt_load_textdomain');
