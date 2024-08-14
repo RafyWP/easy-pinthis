@@ -9,6 +9,7 @@ class EasyPinThisShortcodes {
         add_shortcode('list-pins', [$this, 'list_pins_shortcode']);
         add_shortcode('add-pin', [$this, 'add_pin_shortcode']);
         add_shortcode('create-folder', [$this, 'create_folder_shortcode']);
+        add_shortcode('swiper-nefi', [$this, 'swiper_nefi_shortcode']);
     }
 
     public function my_pins_shortcode($atts) {
@@ -147,7 +148,13 @@ class EasyPinThisShortcodes {
             }
         </style>';
     
+        $output .= '<div id="folders-list">';
+        $output .= '<div class="folders-list">';
+        $output .= '<h4>Salvar</h4>';
         $output .= '<input type="hidden" id="pin_id" />';
+        $output .= '<div id="folders-search">';
+        $output .= '<input type="text" placeholder="Busque uma pasta" />';
+        $output .= '</div>';
         $output .= '<ul class="folder">';
         while ($folders->have_posts()) {
             $folders->the_post();
@@ -164,6 +171,11 @@ class EasyPinThisShortcodes {
             $output .= '</li>';
         }
         $output .= '</ul>';
+        $output .= '<div id="folders-add">';
+        $output .= '<button class="folder-create">Criar nova pasta</button>';
+        $output .= '</div>';
+        $output .= '</div>';
+        $output .= '</div>';
     
         wp_reset_postdata();
     
@@ -171,11 +183,9 @@ class EasyPinThisShortcodes {
     }
 
     public function create_folder_shortcode($atts) {
-        $output = '<style>
-        .create-folder { display: flex; gap: .5rem; flex-direction: column; }
-        .btns { display: flex; justify-content: space-between; }
-        </style>';
+        $output = '';
 
+        $output .= '<div id="create-folder-wraper">';
         $output .= '<div class="create-folder">';
         $output .= '<label for="title">Nome</label>';
     
@@ -186,6 +196,110 @@ class EasyPinThisShortcodes {
         $output .= '<input type="submit" id="create-folder" value="Criar" />';
         $output .= '</div>';
         $output .= '</div>';
+        $output .= '</div>';
+    
+        return $output;
+    }
+
+    public function swiper_nefi_shortcode($atts) {
+        $output = '<div id="nefi">';
+    
+        $current_taxonomy = get_queried_object()->taxonomy;
+        $current_term = get_queried_object()->slug;
+    
+        $args = array(
+            'post_type' => 'ez_pin',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => $current_taxonomy,
+                    'field'    => 'slug',
+                    'terms'    => $current_term,
+                ),
+            ),
+        );
+    
+        $query = new \WP_Query($args);
+    
+        if ($query->have_posts()) {
+            $output .= '<div class="swiper neFi">';
+            $output .= '<div class="swiper-wrapper">';
+    
+            while ($query->have_posts()) {
+                $query->the_post();
+    
+                $output .= '<div class="swiper-slide">';
+                $output .= '<div class="wrapper">';
+    
+                $output .= '<div>';
+                if (has_post_thumbnail()) {
+                    $output .= get_the_post_thumbnail(get_the_ID(), [350,0]);
+                }
+                $output .= '</div>';
+    
+                $output .= '<div class="meta">';
+                $output .= '<h4>' . get_the_title() . '</h4>';
+    
+                $output .= '<div class="season">';
+                $terms = get_the_terms(get_the_ID(), 'ez_pt_season');
+                if ($terms && !is_wp_error($terms)) {
+                    foreach ($terms as $term) {
+                        $output .= 'TEMPORADA: ' . esc_html($term->name);
+                    }
+                }
+                $output .= '</div>';
+
+                $output .= '<div class="department">';
+                $terms = get_the_terms(get_the_ID(), 'ez_pt_department');
+                if ($terms && !is_wp_error($terms)) {
+                    foreach ($terms as $term) {
+                        $output .= 'DEPARTAMENTO: ' . esc_html($term->name);
+                    }
+                }
+                $output .= '</div>';
+
+                $output .= '<div class="category">';
+                $terms = get_the_terms(get_the_ID(), 'ez_pt_category');
+                if ($terms && !is_wp_error($terms)) {
+                    foreach ($terms as $term) {
+                        $output .= 'CATEGORIA: ' . esc_html($term->name);
+                    }
+                }
+                $output .= '</div>';
+
+                $output .= '<div class="item">';
+                $output .= 'ITEM: ' . get_post_meta(get_the_ID(), 'ez_pt_item', true);
+                $output .= '</div>';
+
+                $output .= '<div class="city">';
+                $output .= 'CIDADE: ' . get_post_meta(get_the_ID(), 'ez_pt_city', true);
+                $output .= '</div>';
+
+                $output .= '<div class="brand">';
+                $output .= 'MARCA: ' . get_post_meta(get_the_ID(), 'ez_pt_brand', true);
+                $output .= '</div>';
+
+                $output .= '<div class="site">';
+                $output .= 'SITE: ' . get_post_meta(get_the_ID(), 'ez_pt_site', true);
+                $output .= '</div>';
+
+                $output .= '<div class="buttons">';
+                $output .= '<button class="open-folders" pin-id="'. get_the_ID() .'">Salvar</button>';
+                //$output .= '<button class="down-pin">Baixar</button>';
+                $output .= '</div>';
+
+                $output .= '</div>';
+                $output .= '</div>';
+                $output .= '</div>';
+            }
+    
+            $output .= '</div>';
+            $output .= '<div class="swiper-button-next"></div>';
+            $output .= '<div class="swiper-button-prev"></div>';
+            $output .= '</div>';
+            $output .= '</div>';
+    
+            wp_reset_postdata();
+        }
     
         return $output;
     }

@@ -1,0 +1,54 @@
+.create-folder { display: flex; gap: .5rem; flex-direction: column; }
+.btns { display: flex; justify-content: space-between; }
+
+.jconfirm.jconfirm-nefi .jconfirm-box {
+    border-radius: 0;
+    box-shadow: 0px 0px 20px #00000033;
+    padding: 55px 80px;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper {
+    display: flex;
+    gap: 60px;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons {
+    padding: 3rem 0 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 1.5rem;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button {
+    border-radius: 50px;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .meta {
+    flex: auto;
+}
+
+.jconfirm.jconfirm-nefi-save .jconfirm-box {
+    border-radius: 0;
+    box-shadow: 0px 0px 20px #00000033;
+    padding: 20px 40px;
+}
+
+.jconfirm.jconfirm-nefi-save .jconfirm-box .folders-list {
+    text-align: center;
+}
+
+.jconfirm.jconfirm-nefi-save .jconfirm-box .folders-list #folders-search input {
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.jconfirm.jconfirm-nefi-save .jconfirm-box .folders-list #folders-add {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #EDEDED;
+}
+
+.jconfirm.jconfirm-nefi-save .jconfirm-box .folders-list #folders-add .folder-create {
+    width: 100%;
+}

@@ -73,6 +73,16 @@ class EasyPinThisSettings {
             'ajax_url' => esc_url(rest_url('easy-pinthis/v1/')),
             'nonce'    => wp_create_nonce('wp_rest')
         ));
+
+        wp_enqueue_script('jquery-confirm-js', plugin_dir_url(__FILE__) . 'js/jquery-confirm.min.js', ['jquery'], '3.3.4', true);
+
+        wp_enqueue_style('jquery-confirm-css', plugin_dir_url(__FILE__) . 'css/jquery-confirm.min.css', [], '3.3.4');
+
+        wp_enqueue_script('swiper-bundle-js', plugin_dir_url(__FILE__) . 'js/swiper-bundle.min.js', ['jquery'], '11.1.9', true);
+
+        wp_enqueue_style('swiper-bundle-css', plugin_dir_url(__FILE__) . 'css/swiper-bundle.min.css', [], '11.1.9');
+
+        wp_enqueue_style('style-css', plugin_dir_url(__FILE__) . 'css/style.css');
     }
 
     public function render_field($args) {
