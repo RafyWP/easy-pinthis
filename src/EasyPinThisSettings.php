@@ -70,7 +70,7 @@ class EasyPinThisSettings {
         wp_enqueue_script('ezpt-front', plugin_dir_url(__FILE__) . 'js/ezpt-front.js', ['jquery'], null, true);
 
         wp_localize_script('ezpt-front', 'ezptFront', array(
-            'ajax_url' => esc_url(rest_url('easy-pinthis/v1/update-folder/')),
+            'ajax_url' => esc_url(rest_url('easy-pinthis/v1/')),
             'nonce'    => wp_create_nonce('wp_rest')
         ));
     }

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Easy PinThis by NeFi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-12 14:50+0000\n"
+"POT-Creation-Date: 2024-08-13 20:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,11 +16,16 @@ msgstr ""
 "X-Loco-Version: 2.6.11; wp-6.6.1\n"
 "X-Domain: easy-pinthis"
 
-#: src/EasyPinThis.php:26 src/EasyPinThisFolders.php:23
+#: src/EasyPinThis.php:27 src/EasyPinThisFolders.php:23
 msgid "Add New"
 msgstr ""
 
-#: src/EasyPinThis.php:25
+#: src/EasyPinThisGroups.php:18
+msgctxt "add new on admin bar"
+msgid "Pin Group"
+msgstr ""
+
+#: src/EasyPinThis.php:26
 msgid "Add New Pin"
 msgstr ""
 
@@ -28,11 +33,24 @@ msgstr ""
 msgid "Add New Pin Folder"
 msgstr ""
 
+#: src/EasyPinThisGroups.php:20
+msgid "Add New Pin Group"
+msgstr ""
+
+#: src/EasyPinThisGroups.php:17
+msgctxt "admin menu"
+msgid "Pin Groups"
+msgstr ""
+
 #: src/EasyPinThisFolders.php:21
 msgid "All Pin Folders"
 msgstr ""
 
-#: src/EasyPinThis.php:24
+#: src/EasyPinThisGroups.php:24
+msgid "All Pin Groups"
+msgstr ""
+
+#: src/EasyPinThis.php:25
 msgid "All Pins"
 msgstr ""
 
@@ -46,11 +64,11 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: src/EasyPinThis.php:36
+#: src/EasyPinThis.php:37
 msgid "Choose the image"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:40
+#: src/EasyPinThisSettings.php:41
 msgid "Default Image to Pin Folders"
 msgstr ""
 
@@ -62,11 +80,11 @@ msgstr ""
 msgid "Designers"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:15 src/EasyPinThisSettings.php:16
+#: src/EasyPinThisSettings.php:16 src/EasyPinThisSettings.php:17
 msgid "Easy Pin This"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:28 src/EasyPinThisSettings.php:84
+#: src/EasyPinThisSettings.php:29 src/EasyPinThisSettings.php:93
 msgid "Easy Pin This Settings"
 msgstr ""
 
@@ -74,12 +92,16 @@ msgstr ""
 msgid "Easy PinThis by NeFi"
 msgstr ""
 
-#: src/EasyPinThis.php:28
+#: src/EasyPinThis.php:29
 msgid "Edit Pin"
 msgstr ""
 
 #: src/EasyPinThisFolders.php:25
 msgid "Edit Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisGroups.php:22
+msgid "Edit Pin Group"
 msgstr ""
 
 #: src/EasyPinThisFolders.php:32
@@ -90,15 +112,15 @@ msgstr ""
 msgid "Filter Pin Folders list"
 msgstr ""
 
-#: src/EasyPinThis.php:43
+#: src/EasyPinThis.php:44
 msgid "Filter pins list"
 msgstr ""
 
-#: src/EasyPinThis.php:35 src/EasyPinThis.php:100
+#: src/EasyPinThis.php:36 src/EasyPinThis.php:102
 msgid "Image for this Pin"
 msgstr ""
 
-#: src/EasyPinThis.php:39
+#: src/EasyPinThis.php:40
 msgid "Insert into pin"
 msgstr ""
 
@@ -114,15 +136,7 @@ msgstr ""
 msgid "NeFi"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:42
-msgid "New Folder Create Button Class"
-msgstr ""
-
-#: src/EasyPinThisSettings.php:41
-msgid "New Folder Input Class"
-msgstr ""
-
-#: src/EasyPinThis.php:27
+#: src/EasyPinThis.php:28
 msgid "New Pin"
 msgstr ""
 
@@ -130,11 +144,23 @@ msgstr ""
 msgid "New Pin Folder"
 msgstr ""
 
-#: src/EasyPinThisShortcodes.php:22
+#: src/EasyPinThisGroups.php:21
+msgid "New Pin Group"
+msgstr ""
+
+#: src/EasyPinThisGroups.php:28
+msgid "No pin groups found in Trash."
+msgstr ""
+
+#: src/EasyPinThisGroups.php:27
+msgid "No pin groups found."
+msgstr ""
+
+#: src/EasyPinThisShortcodes.php:23 src/EasyPinThisShortcodes.php:125
 msgid "No pins found."
 msgstr ""
 
-#: src/EasyPinThisShortcodes.php:76
+#: src/EasyPinThisShortcodes.php:83
 msgid "No pins in this folder."
 msgstr ""
 
@@ -142,11 +168,11 @@ msgstr ""
 msgid "No title provided"
 msgstr ""
 
-#: src/EasyPinThis.php:33 src/EasyPinThisFolders.php:30
+#: src/EasyPinThis.php:34 src/EasyPinThisFolders.php:30
 msgid "Not found"
 msgstr ""
 
-#: src/EasyPinThis.php:34 src/EasyPinThisFolders.php:31
+#: src/EasyPinThis.php:35 src/EasyPinThisFolders.php:31
 msgid "Not found in Trash"
 msgstr ""
 
@@ -154,19 +180,23 @@ msgstr ""
 msgid "Parent Pin Folder:"
 msgstr ""
 
-#: src/EasyPinThis.php:23
+#: src/EasyPinThisGroups.php:26
+msgid "Parent Pin Groups:"
+msgstr ""
+
+#: src/EasyPinThis.php:24
 msgid "Parent Pin:"
 msgstr ""
 
-#: src/EasyPinThis.php:20
+#: src/EasyPinThis.php:21
 msgid "Pin"
 msgstr ""
 
-#: src/EasyPinThis.php:21
+#: src/EasyPinThis.php:22
 msgid "Pin Archives"
 msgstr ""
 
-#: src/EasyPinThis.php:22
+#: src/EasyPinThis.php:23
 msgid "Pin Attributes"
 msgstr ""
 
@@ -194,15 +224,20 @@ msgstr ""
 msgid "Pin Folders list navigation"
 msgstr ""
 
-#: src/EasyPinThis.php:19
+#: src/EasyPinThisGroups.php:19
+msgctxt "Pin Group"
+msgid "Add New"
+msgstr ""
+
+#: src/EasyPinThis.php:20 src/EasyPinThisFolders.php:63
 msgid "Pins"
 msgstr ""
 
-#: src/EasyPinThis.php:41
+#: src/EasyPinThis.php:42
 msgid "Pins list"
 msgstr ""
 
-#: src/EasyPinThis.php:42
+#: src/EasyPinThis.php:43
 msgid "Pins list navigation"
 msgstr ""
 
@@ -211,12 +246,17 @@ msgctxt "Post Type General Name"
 msgid "Pin Folders"
 msgstr ""
 
-#: src/EasyPinThis.php:17
+#: src/EasyPinThisGroups.php:15
+msgctxt "post type general name"
+msgid "Pin Groups"
+msgstr ""
+
+#: src/EasyPinThis.php:18
 msgctxt "Post Type General Name"
 msgid "Pins"
 msgstr ""
 
-#: src/EasyPinThis.php:18
+#: src/EasyPinThis.php:19
 msgctxt "Post Type Singular Name"
 msgid "Pin"
 msgstr ""
@@ -226,16 +266,25 @@ msgctxt "Post Type Singular Name"
 msgid "Pin Folder"
 msgstr ""
 
-#: src/EasyPinThis.php:37 src/EasyPinThisFolders.php:34
+#: src/EasyPinThisGroups.php:16
+msgctxt "post type singular name"
+msgid "Pin Group"
+msgstr ""
+
+#: src/EasyPinThis.php:38 src/EasyPinThisFolders.php:34
 msgid "Remove featured image"
 msgstr ""
 
-#: src/EasyPinThis.php:32
+#: src/EasyPinThis.php:33
 msgid "Search Pin"
 msgstr ""
 
 #: src/EasyPinThisFolders.php:29
 msgid "Search Pin Folder"
+msgstr ""
+
+#: src/EasyPinThisGroups.php:25
+msgid "Search Pin Groups"
 msgstr ""
 
 #: src/EasyPinThisTaxonomies.php:15
@@ -250,35 +299,35 @@ msgstr ""
 msgid "Set featured image"
 msgstr ""
 
-#: src/EasyPinThis.php:65 src/EasyPinThisFolders.php:62
+#: src/EasyPinThis.php:67
 msgid "Settings"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:36
+#: src/EasyPinThisSettings.php:37
 msgid "Slug Category"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:37
+#: src/EasyPinThisSettings.php:38
 msgid "Slug Department"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:39
+#: src/EasyPinThisSettings.php:40
 msgid "Slug Designer"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:34
+#: src/EasyPinThisSettings.php:35
 msgid "Slug Pin"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:35
+#: src/EasyPinThisSettings.php:36
 msgid "Slug Pin Folder"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:38
+#: src/EasyPinThisSettings.php:39
 msgid "Slug Season"
 msgstr ""
 
-#: src/EasyPinThis.php:29
+#: src/EasyPinThis.php:30
 msgid "Update Pin"
 msgstr ""
 
@@ -286,11 +335,15 @@ msgstr ""
 msgid "Update Pin Folder"
 msgstr ""
 
-#: src/EasyPinThisSettings.php:63 src/EasyPinThisSettings.php:75
+#: src/EasyPinThisSettings.php:63 src/EasyPinThisSettings.php:84
 msgid "Upload Image"
 msgstr ""
 
-#: src/EasyPinThis.php:40
+#: src/EasyPinThisGroups.php:70 src/EasyPinThisGroups.php:74
+msgid "Upload Images"
+msgstr ""
+
+#: src/EasyPinThis.php:41
 msgid "Uploaded to this pin"
 msgstr ""
 
@@ -298,7 +351,7 @@ msgstr ""
 msgid "Uploaded to this Pin Folder"
 msgstr ""
 
-#: src/EasyPinThis.php:38 src/EasyPinThisFolders.php:35
+#: src/EasyPinThis.php:39 src/EasyPinThisFolders.php:35
 msgid "Use as featured image"
 msgstr ""
 
@@ -306,7 +359,7 @@ msgstr ""
 msgid "Use this image"
 msgstr ""
 
-#: src/EasyPinThis.php:30
+#: src/EasyPinThis.php:31
 msgid "View Pin"
 msgstr ""
 
@@ -318,6 +371,10 @@ msgstr ""
 msgid "View Pin Folders"
 msgstr ""
 
-#: src/EasyPinThis.php:31
+#: src/EasyPinThisGroups.php:23
+msgid "View Pin Group"
+msgstr ""
+
+#: src/EasyPinThis.php:32
 msgid "View Pins"
 msgstr ""

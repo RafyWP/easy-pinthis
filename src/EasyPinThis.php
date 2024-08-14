@@ -5,6 +5,7 @@ namespace EasyPinThis;
 class EasyPinThis {
 
     public function __construct() {
+        new EasyPinThisGroups();
         new EasyPinThisTaxonomies();
         new EasyPinThisFolders();
         new EasyPinThisApi();
@@ -55,6 +56,7 @@ class EasyPinThis {
                 'slug' => $slug_pin,
             ],
             'menu_icon' => 'dashicons-format-image',
+            'menu_position'      => 45
         ]);
     }
 
@@ -78,7 +80,7 @@ class EasyPinThis {
         foreach ($fields as $field) {
             $value = get_post_meta($post->ID, 'ez_pt_' . $field, true);
             echo '<p><label for="ez_pt_' . $field . '">' . ucfirst($field) . '</label>';
-            echo '<input type="text" id="ez_pt_' . $field . '" name="ez_pt_' . $field . '" value="' . esc_attr($value) . '" /></p>';
+            echo '<input type="text" id="ez_pt_' . $field . '" name="ez_pt_' . $field . '" value="' . esc_attr($value) . '" class="widefat" /></p>';
         }
     }
 

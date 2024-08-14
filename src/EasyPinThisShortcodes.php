@@ -8,6 +8,7 @@ class EasyPinThisShortcodes {
         add_shortcode('my-pins', [$this, 'my_pins_shortcode']);
         add_shortcode('list-pins', [$this, 'list_pins_shortcode']);
         add_shortcode('add-pin', [$this, 'add_pin_shortcode']);
+        add_shortcode('create-folder', [$this, 'create_folder_shortcode']);
     }
 
     public function my_pins_shortcode($atts) {
@@ -23,16 +24,15 @@ class EasyPinThisShortcodes {
             return __('No pins found.', 'easy-pinthis');
         }
     
-        // Adiciona o CSS diretamente no shortcode
         $output = '<style>
             .pin-list-item {
                 width: 300px;
-                margin: 0 auto; /* Centraliza o item se necessário */
-                list-style-type: none; /* Remove os marcadores padrão */
+                margin: 0 auto;
+                list-style-type: none;
             }
             .pin-list-item img {
-                width: 100%; /* Ajusta a imagem para ocupar a largura máxima do item */
-                height: auto; /* Mantém a proporção da imagem */
+                width: 100%;
+                height: auto;
             }
             .pin-this {
                 display: block;
@@ -87,12 +87,12 @@ class EasyPinThisShortcodes {
         $output = '<style>
             .pin-list-item {
                 width: 300px;
-                margin: 0 auto; /* Centraliza o item se necessário */
-                list-style-type: none; /* Remove os marcadores padrão */
+                margin: 0 auto;
+                list-style-type: none;
             }
             .pin-list-item img {
-                width: 100%; /* Ajusta a imagem para ocupar a largura máxima do item */
-                height: auto; /* Mantém a proporção da imagem */
+                width: 100%;
+                height: auto;
             }
             .pin-this {
                 display: block;
@@ -166,6 +166,26 @@ class EasyPinThisShortcodes {
         $output .= '</ul>';
     
         wp_reset_postdata();
+    
+        return $output;
+    }
+
+    public function create_folder_shortcode($atts) {
+        $output = '<style>
+        .create-folder { display: flex; gap: .5rem; flex-direction: column; }
+        .btns { display: flex; justify-content: space-between; }
+        </style>';
+
+        $output .= '<div class="create-folder">';
+        $output .= '<label for="title">Nome</label>';
+    
+        $output .= '<input type="text" id="title" name="title" placeholder="Por exemplo: Inspirações ou Tendências" />';
+
+        $output .= '<div class="btns">';
+        $output .= '<input type="button" id="cancel" value="Cancelar" />';
+        $output .= '<input type="submit" id="create-folder" value="Criar" />';
+        $output .= '</div>';
+        $output .= '</div>';
     
         return $output;
     }

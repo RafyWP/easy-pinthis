@@ -52,6 +52,7 @@ class EasyPinThisFolders {
                 'slug' => $slug_pin_folder,
             ],
             'menu_icon' => 'dashicons-portfolio',
+            'menu_position'      => 48
         ]);
     }
 

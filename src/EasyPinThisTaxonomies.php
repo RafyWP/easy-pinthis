@@ -17,7 +17,7 @@ class EasyPinThisTaxonomies {
         ];
 
         foreach ($taxonomies as $taxonomy => $label) {
-            register_taxonomy($taxonomy, 'ez_pin', [
+            register_taxonomy($taxonomy, ['ez_pin', 'ez_pin_group'], [
                 'labels' => [
                     'name' => $label,
                     'singular_name' => $label,
