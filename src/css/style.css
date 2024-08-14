@@ -5,6 +5,10 @@
     border-radius: 0;
     box-shadow: 0px 0px 20px #00000033;
     padding: 55px 80px;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+    font-weight: 500;
 }
 
 .jconfirm.jconfirm-nefi .jconfirm-box .wrapper {
@@ -20,8 +24,43 @@
     margin-bottom: 1.5rem;
 }
 
-.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button {
-    border-radius: 50px;
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button, .jconfirm.jconfirm-nefi-save .jconfirm-box .wrapper .buttons button {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 17px;
+    fill: #2A2A2A;
+    color: #2A2A2A;
+    background-color: #FFC743;
+    border-radius: 50px 50px 50px 50px;
+    padding: 17px 36px 16px 36px;
+    border: none;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons.btns button, .jconfirm.jconfirm-nefi-save .jconfirm-box .wrapper .buttons.btns button {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 15px;
+    padding: 12px 22px 11px 22px;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button.excluir {
+    background-color: #FF4343;
+    color: white;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button.down-pin {
+    background-color: #FFE943;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button:hover, .jconfirm.jconfirm-nefi-save .jconfirm-box .wrapper .buttons button:hover {
+    background-color: #2A2A2A;
+    color: #FFC743;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button.down-pin:hover {
+    color: #FFE943;
+    background-color: #2A2A2A;
 }
 
 .jconfirm.jconfirm-nefi .jconfirm-box .wrapper .meta {
@@ -32,6 +71,15 @@
     border-radius: 0;
     box-shadow: 0px 0px 20px #00000033;
     padding: 20px 40px;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+    font-weight: 500;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box h4, .jconfirm.jconfirm-nefi-save .jconfirm-box h4 {
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 .jconfirm.jconfirm-nefi-save .jconfirm-box .folders-list {
@@ -51,4 +99,49 @@
 
 .jconfirm.jconfirm-nefi-save .jconfirm-box .folders-list #folders-add .folder-create {
     width: 100%;
+    border: none;
+    background-color: transparent !important;
+    font-weight: bold;
+    position: relative;
+    color: black !important;
+    height: 60px;
+}
+
+.jconfirm.jconfirm-nefi-save .jconfirm-box .folders-list #folders-add .folder-create::before {
+    content: '+';
+    background-color: #DDDD;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    font-weight: normal;
+}
+
+.jconfirm.jconfirm-nefi-save .jconfirm-box .create-folder h4 {
+    text-align: center;
+}
+
+.folder {
+    padding: 0 10px;
+    list-style: none;
+    height: 250px;
+    overflow-y: auto;
+}
+.folder .item {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.folder .item:hover {
+    background-color: #EDEDED;
+}
+.folder .item img {
+    border-radius: 12px;
 }

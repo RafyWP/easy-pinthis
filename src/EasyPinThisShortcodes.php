@@ -127,26 +127,7 @@ class EasyPinThisShortcodes {
             return __('No pins found.', 'easy-pinthis');
         }
     
-        $output = '<style>
-            .folder {
-                padding: 0 10px;
-                list-style: none;
-            }
-            .folder .item {
-                display: flex;
-                gap: 2rem;
-                align-items: center;
-                cursor: pointer;
-                border-radius: 12px;
-                margin-bottom: 12px;
-            }
-            .folder .item:hover {
-                background-color: #EDEDED;
-            }
-            .folder .item img {
-                border-radius: 12px;
-            }
-        </style>';
+        $output = '';
     
         $output .= '<div id="folders-list">';
         $output .= '<div class="folders-list">';
@@ -186,14 +167,15 @@ class EasyPinThisShortcodes {
         $output = '';
 
         $output .= '<div id="create-folder-wraper">';
-        $output .= '<div class="create-folder">';
+        $output .= '<div class="create-folder wrapper">';
+        $output .= '<h4>Criar pasta</h4>';
         $output .= '<label for="title">Nome</label>';
     
         $output .= '<input type="text" id="title" name="title" placeholder="Por exemplo: Inspirações ou Tendências" />';
 
-        $output .= '<div class="btns">';
-        $output .= '<input type="button" id="cancel" value="Cancelar" />';
-        $output .= '<input type="submit" id="create-folder" value="Criar" />';
+        $output .= '<div class="buttons btns">';
+        $output .= '<button id="cancel">Cancelar</button>';
+        $output .= '<button id="create-folder">Criar</button>';
         $output .= '</div>';
         $output .= '</div>';
         $output .= '</div>';
@@ -260,8 +242,9 @@ class EasyPinThisShortcodes {
                 $output .= '<div class="category">';
                 $terms = get_the_terms(get_the_ID(), 'ez_pt_category');
                 if ($terms && !is_wp_error($terms)) {
+                    $output .= 'CATEGORIA: ';
                     foreach ($terms as $term) {
-                        $output .= 'CATEGORIA: ' . esc_html($term->name);
+                        $output .= esc_html($term->name);
                     }
                 }
                 $output .= '</div>';
@@ -284,6 +267,7 @@ class EasyPinThisShortcodes {
 
                 $output .= '<div class="buttons">';
                 $output .= '<button class="open-folders" pin-id="'. get_the_ID() .'">Salvar</button>';
+                $output .= '<button class="excluir" folder-id="" pin-id="'. get_the_ID() .'">Excluir</button>';
                 //$output .= '<button class="down-pin">Baixar</button>';
                 $output .= '</div>';
 

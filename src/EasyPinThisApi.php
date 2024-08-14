@@ -24,6 +24,14 @@ class EasyPinThisApi {
                 return current_user_can('edit_posts');
             }
         ]);
+
+        register_rest_route('easy-pinthis/v1', '/remove-pin-from-folder/', [
+            'methods' => 'POST',
+            'callback' => [$this, 'remove_pin_from_folder'],
+            'permission_callback' => function () {
+                return current_user_can('edit_posts');
+            }
+        ]);
     }
 
     public function create_folder($request) {
@@ -65,4 +73,25 @@ class EasyPinThisApi {
 
         return rest_ensure_response(['success' => true]);
     }
+
+    public function remove_pin_from_folder($request) {
+        $folder_id = intval($request['folder_id']);
+        $pin_id = intval($request['pin_id']);
+    
+        if (!$folder_id || !$pin_id) {
+            return new \WP_Error('missing_ids', __('Missing folder or pin ID', 'easy-pinthis'), ['status' => 400]);
+        }
+    
+        $pin_ids = get_post_meta($folder_id, 'pin_ids', true) ?: [];
+        $pin_ids = is_array($pin_ids) ? $pin_ids : [];
+    
+        if (in_array($pin_id, $pin_ids)) {
+            $pin_ids = array_diff($pin_ids, [$pin_id]);
+        }
+    
+        update_post_meta($folder_id, 'pin_ids', $pin_ids);
+    
+        return rest_ensure_response(['success' => true]);
+    }
+    
 }

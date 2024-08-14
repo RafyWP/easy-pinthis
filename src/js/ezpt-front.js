@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
                                         content: `
                                         <div style="text-align: center;">
                                             <h4>Conteúdo Salvo</h4>
-                                            <p>Você salvou este conteúdo na pasta Inspirações!</p>
+                                            <p>Você salvou este conteúdo!</p>
                                         </div>
                                         `,
                                         buttons: {
@@ -88,7 +88,7 @@ jQuery(document).ready(function($) {
                                 var create_folder = $.dialog({
                                     theme: 'nefi-save',
                                     title: null,
-                                    boxWidth: '396px',
+                                    boxWidth: '491px',
                                     useBootstrap: false,
                                     content: function(){
                                         var self = this;
@@ -165,9 +165,72 @@ jQuery(document).ready(function($) {
                                                 console.error('Erro:', error);
                                             });
                                         });
+                                        this.$content.find('#cancel').click(function(e){
+                                            create_folder.close();
+                                        });
                                     }
                                 });
                             });
+                        }
+                    });
+                });
+                this.$content.find('.excluir').click(function(){
+                    var exclude_pin = $.confirm({
+                        theme: 'nefi-save',
+                        title: 'Excluir',
+                        boxWidth: '491px',
+                        useBootstrap: false,
+                        content: 'Tem certeza que deseja excluir este conteúdo?',
+                        buttons: {
+                            cancel: {
+                                text: 'Voltar',
+                                action: function () {}
+                            },
+                            ok: {
+                                text: 'Sim, quero excluir',
+                                action: function () {
+                            
+                                    var data = {
+                                        pin_id: pin_id,
+                                        folder_id: folder_id
+                                    };
+                                    console.log(data);
+                                
+                                    fetch(ezptFront.ajax_url + 'remove-pin-from-folder/', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'X-WP-Nonce': ezptFront.nonce
+                                        },
+                                        body: JSON.stringify(data)
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        save.close();
+                                        var success = $.confirm({
+                                            theme: 'nefi-save',
+                                            title: null,
+                                            boxWidth: '491px',
+                                            useBootstrap: false,
+                                            content: `
+                                            <div style="text-align: center;">
+                                                <h4>Excluir</h4>
+                                                <p>Conteúdo excluído com sucesso!</p>
+                                            </div>
+                                            `,
+                                            buttons: {
+                                                close: {
+                                                    text: 'Voltar',
+                                                    action: function () {}
+                                                }
+                                            }
+                                        });
+                                    })
+                                    .catch((error) => {
+                                        console.error('Erro:', error);
+                                    });
+                                }
+                            }
                         }
                     });
                 });
