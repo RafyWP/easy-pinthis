@@ -82,6 +82,9 @@ class EasyPinThis {
             echo '<p><label for="ez_pt_' . $field . '">' . ucfirst($field) . '</label>';
             echo '<input type="text" id="ez_pt_' . $field . '" name="ez_pt_' . $field . '" value="' . esc_attr($value) . '" class="widefat" /></p>';
         }
+
+        $value = get_post_meta($post->ID, 'ez_pt_folder_id', true);
+        echo '<input type="text" id="ez_pt_folder_id' . '" name="ez_pt_folder_id' . '" value="' . esc_attr($value) . '" class="widefat" />';
     }
 
     public function save_pin_metabox($post_id) {
@@ -91,6 +94,9 @@ class EasyPinThis {
             if (isset($_POST['ez_pt_' . $field])) {
                 update_post_meta($post_id, 'ez_pt_' . $field, sanitize_text_field($_POST['ez_pt_' . $field]));
             }
+        }
+        if (isset($_POST['ez_pt_folder_id'])) {
+            update_post_meta($post_id, 'ez_pt_folder_id', sanitize_text_field($_POST['ez_pt_folder_id']));
         }
     }
 

@@ -24,7 +24,7 @@
     margin-bottom: 1.5rem;
 }
 
-.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button, .jconfirm.jconfirm-nefi-save .jconfirm-box .wrapper .buttons button {
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button, .jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons .button, .jconfirm.jconfirm-nefi-save .jconfirm-box .wrapper .buttons button {
     font-family: "Montserrat", Sans-serif;
     font-size: 17px;
     font-weight: 600;
@@ -37,6 +37,11 @@
     border: none;
 }
 
+.jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons .button {
+    background-color: transparent;
+    border: 1px solid #FFC743;
+}
+
 .jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons.btns button, .jconfirm.jconfirm-nefi-save .jconfirm-box .wrapper .buttons.btns button {
     font-size: 15px;
     font-weight: 500;
@@ -47,6 +52,35 @@
 .jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button.excluir {
     background-color: #FF4343;
     color: white;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .varios {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .varios .pilulas {
+	flex: 1;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box .varios .tags {
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+	border: 1px solid #EDEDED;
+    border-right: none;
+	display: inline-block;
+	padding: 2px 8px 2px 14px;
+	vertical-align: top;
+}
+
+.jconfirm.jconfirm-nefi .jconfirm-box button.excluir.peq {
+	padding: 2px 11px 0px 11px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	display: inline-block;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
 }
 
 .jconfirm.jconfirm-nefi .jconfirm-box .wrapper .buttons button.down-pin {
@@ -131,6 +165,7 @@
     height: 250px;
     overflow-y: auto;
 }
+
 .folder .item {
     display: flex;
     gap: 2rem;
@@ -139,9 +174,57 @@
     border-radius: 12px;
     margin-bottom: 12px;
 }
+
 .folder .item:hover {
     background-color: #EDEDED;
 }
+
 .folder .item img {
     border-radius: 12px;
+}
+
+#pin-list {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+#pin-list .select {
+    max-width: 300px;
+    display: flex;
+    gap: 1rem;
+}
+
+.pin-list {
+    display: flex;
+    list-style-type: none;
+    gap: 2%;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.pin-list-item {
+    flex: 1 0 18.4%;
+    max-width: 18.4%;
+}
+
+.pin-list-item img {
+    width: 100%;
+    height: auto;
+}
+
+.pin-this {
+    display: block;
+    margin-top: 10px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1rem;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.filter-group > div {
+    flex: 1;
 }

@@ -69,6 +69,16 @@ class EasyPinThisApi {
             $pin_ids[] = $pin_id;
         }
 
+        $folder_ids = get_post_meta($pin_id, 'ez_pt_folder_id', true);
+        $folder_ids_array = !empty($folder_ids) ? explode(',', $folder_ids) : array();
+
+        if (!in_array($folder_id, $folder_ids_array)) {
+            $folder_ids_array[] = $folder_id;
+        }
+
+        $folder_ids = implode(',', $folder_ids_array);
+
+        update_post_meta($pin_id, 'ez_pt_folder_id', $folder_ids);
         update_post_meta($folder_id, 'pin_ids', $pin_ids);
 
         return rest_ensure_response(['success' => true]);
@@ -88,7 +98,17 @@ class EasyPinThisApi {
         if (in_array($pin_id, $pin_ids)) {
             $pin_ids = array_diff($pin_ids, [$pin_id]);
         }
-    
+
+        $folder_ids = get_post_meta($pin_id, 'ez_pt_folder_id', true);
+        $folder_ids_array = !empty($folder_ids) ? explode(',', $folder_ids) : array();
+
+        if (($key = array_search($folder_id, $folder_ids_array)) !== false) {
+            unset($folder_ids_array[$key]);
+        }
+
+        $folder_ids = implode(',', $folder_ids_array);
+
+        update_post_meta($pin_id, 'ez_pt_folder_id', $folder_ids);
         update_post_meta($folder_id, 'pin_ids', $pin_ids);
     
         return rest_ensure_response(['success' => true]);

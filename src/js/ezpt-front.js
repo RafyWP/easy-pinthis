@@ -1,4 +1,11 @@
 jQuery(document).ready(function($) {
+    $('#folder-select').on('change', function() {
+        var selectedValue = $(this).val();
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    });
+
     $('.pin-click').on('click', function(e) {
         e.preventDefault();
         var pin_id = $(this).attr('pin-id');
@@ -6,7 +13,7 @@ jQuery(document).ready(function($) {
 
         var content = $('#nefi').html();
 
-        $.dialog({
+        var ppp = $.dialog({
             theme: 'nefi',
             title: null,
             boxWidth: '940px',
@@ -17,13 +24,25 @@ jQuery(document).ready(function($) {
             },
             onContentReady: function(){
                 this.setContentAppend(content);
+                var ne = this;
                 var swiper_neFi = new Swiper(".neFi", {
                     navigation: {
                       nextEl: ".swiper-button-next",
                       prevEl: ".swiper-button-prev",
                     },
+                    on: {
+                        slideChange: function () {
+                            var pin_id = $('.swiper-slide').eq(this.activeIndex).attr('pin-id');
+                            $('#pin_id').val(pin_id);
+                        },
+                        afterInit: function () {
+                            this.activeIndex = $('.swiper-slide[pin-id='+pin_id+']').index();
+                        }
+                    }
                 });
-                
+
+                var popup = this;
+
                 this.$content.find('.open-folders').click(function(){
                     var content2 = $('#folders-list').html();
                     var pin_id = $(this).attr('pin-id');
@@ -42,6 +61,7 @@ jQuery(document).ready(function($) {
                                 e.preventDefault();
     
                                 var folder_id = $(this).attr('folder-id');
+                                var folder_name = $(this).attr('folder-name');
                             
                                 var data = {
                                     pin_id: pin_id,
@@ -60,7 +80,7 @@ jQuery(document).ready(function($) {
                                 .then(response => response.json())
                                 .then(data => {
                                     save.close();
-                                    var success = $.confirm({
+                                    $.confirm({
                                         theme: 'nefi-save',
                                         title: null,
                                         boxWidth: '491px',
@@ -68,7 +88,7 @@ jQuery(document).ready(function($) {
                                         content: `
                                         <div style="text-align: center;">
                                             <h4>Conteúdo Salvo</h4>
-                                            <p>Você salvou este conteúdo!</p>
+                                            <p>Você salvou este conteúdo em ${folder_name}!</p>
                                         </div>
                                         `,
                                         buttons: {
@@ -78,6 +98,12 @@ jQuery(document).ready(function($) {
                                             }
                                         }
                                     });
+                                    var new_pilula = '<div class="pilula"><div class="tags">'+folder_name+'</div><button onClick="window.location.reload();" class="excluir peq" folder-id="'+folder_id+'" pin-id="'+pin_id+'">&times;</button></div>';
+                                    if ( popup.$content.find('.meta .varios') ) {
+                                        popup.$content.find('.meta .varios').append(new_pilula);
+                                    } else {
+                                        popup.$content.find('.meta').append('<div class="varios">' + new_pilula + '</div>');
+                                    }
                                 })
                                 .catch((error) => {
                                     console.error('Erro:', error);
@@ -138,7 +164,7 @@ jQuery(document).ready(function($) {
                                                     console.log('Sucesso:', data);
                                                     create_folder.close();
                                                     save.close();
-                                                    var success = $.confirm({
+                                                    $.confirm({
                                                         theme: 'nefi-save',
                                                         title: null,
                                                         boxWidth: '491px',
@@ -175,6 +201,7 @@ jQuery(document).ready(function($) {
                     });
                 });
                 this.$content.find('.excluir').click(function(){
+                    var folder_id = $(this).attr('folder-id');
                     var exclude_pin = $.confirm({
                         theme: 'nefi-save',
                         title: 'Excluir',
@@ -206,8 +233,7 @@ jQuery(document).ready(function($) {
                                     })
                                     .then(response => response.json())
                                     .then(data => {
-                                        save.close();
-                                        var success = $.confirm({
+                                        $.confirm({
                                             theme: 'nefi-save',
                                             title: null,
                                             boxWidth: '491px',
